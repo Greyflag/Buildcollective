@@ -20,10 +20,10 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: "The Build Collective | Innovative Digital Solutions",
+  title: "The Build Collective",
   description:
-    "The Build Collective creates cutting-edge digital experiences, connecting innovators and pushing technological boundaries.",
-  keywords: "build collective, digital innovation, web development, interactive design, portfolio",
+    "The Build Collective creates opportunities for builders to grow and connect with others to launch innovative products.",
+  keywords: "build collective, web development, interactive design, portfolio",
     generator: 'v0.dev'
 }
 
