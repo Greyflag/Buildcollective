@@ -13,10 +13,10 @@ import { Button } from "@/components/ui/button"
 // Team data with LinkedIn profiles
 const team = [
   {
-    name: "Josiah Aviles",
+    name: "Jon Wentel",
     image: "/placeholder.svg?height=400&width=400",
     social: {
-      linkedin: "https://www.linkedin.com/in/josiahaviles/",
+      linkedin: "",
     },
   },
   {
