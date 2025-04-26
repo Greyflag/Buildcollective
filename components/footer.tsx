@@ -13,7 +13,7 @@ export default function Footer() {
               <Logo size="lg" />
             </Link>
             <p className="mt-4 text-muted-foreground max-w-md">
-              Creating innovative digital experiences that push boundaries and connect visionaries.
+              builders build
             </p>
           </div>
 
