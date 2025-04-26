@@ -19,7 +19,7 @@ export default function IntroSection() {
       <div className="container mx-auto px-4">
         <motion.div style={{ opacity, y }} className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8 gradient-text">
-            Pushing Boundaries Through Digital Innovation
+            Pushing Boundaries Through Collective Innovation
           </h2>
 
           <p className="text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed">
