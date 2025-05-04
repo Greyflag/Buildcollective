@@ -36,7 +36,7 @@ const projects = [
     ],
     category: "Web Application",
     slug: "bill-club",
-    team: ["Josiah Aviles", "Henry Zhao", "Kien Tran", "Sai Damireddi"],
+    team: ["Jon Wentel", "Henry Zhao", "Kien Tran", "Sai Damireddi"],
     liveUrl: "https://billclub.io/",
   },
   {
@@ -69,7 +69,7 @@ const projects = [
     ],
     category: "Enterprise Platform",
     slug: "sylvia",
-    team: ["Henry Zhao", "Sai Damireddi", "Josiah Aviles", "Kien Tran"],
+    team: ["Henry Zhao", "Sai Damireddi", "Jon Wentel", "Kien Tran"],
     liveUrl: "",
   },
 ]
