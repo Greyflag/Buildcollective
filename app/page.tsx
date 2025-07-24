@@ -398,6 +398,12 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 gradient-text">Ready to Connect?</h2>
             <ContactForm />
+            <p className="mt-8 text-muted-foreground">
+              For any further questions, please contact us at{" "}
+              <a href="mailto:build@buildcollective.com" className="text-primary hover:underline">
+                build@buildcollective.com
+              </a>
+            </p>
           </div>
         </div>
       </section>

@@ -51,8 +51,12 @@ export default function ContactForm({ isConnectPage = false }: ContactFormProps)
 
   // Form submission handler
   const onSubmit = async (data: FormValues) => {
-    // Formspree expects the data as an object, not FormData for JSON submissions
-    await handleSubmit(data)
+    try {
+      // Formspree expects the data as an object, not FormData for JSON submissions
+      await handleSubmit(data)
+    } catch (error) {
+      console.error('Form submission error:', error)
+    }
   }
 
   // Expertise options
@@ -272,16 +276,12 @@ export default function ContactForm({ isConnectPage = false }: ContactFormProps)
 
             <FormField
               control={form.control}
-              name="exceptionalWork"
+              name="weeklyHours"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>What exceptional work have you done?</FormLabel>
+                  <FormLabel>What is the estimated amount of hours you can commit each week?</FormLabel>
                   <FormControl>
-                    <Textarea
-                      placeholder="Describe your achievements, projects, or notable contributions..."
-                      className="min-h-[100px]"
-                      {...field}
-                    />
+                    <Input placeholder="How much time can you commit each week to building a start-up..." {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -293,9 +293,27 @@ export default function ContactForm({ isConnectPage = false }: ContactFormProps)
               name="currentWork"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Where do you currently work or planning to work?</FormLabel>
+                  <FormLabel>Where do you currently work, have worked, or future career plans?</FormLabel>
                   <FormControl>
                     <Input placeholder="Company, startup, or future plans..." {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="exceptionalWork"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>What exceptional work have you done?</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      placeholder="Describe your achievements, projects, or notable contributions..."
+                      className="min-h-[100px]"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -320,22 +338,15 @@ export default function ContactForm({ isConnectPage = false }: ContactFormProps)
               )}
             />
 
-            <FormField
-              control={form.control}
-              name="weeklyHours"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>What is the estimated amount of hours you can commit each week?</FormLabel>
-                  <FormControl>
-                    <Input placeholder="How much time can you commit each week to building a start-up..." {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
 
-            <Button type="submit" size="lg" className="w-full md:w-auto">
-              Apply
+            {state.errors && (
+              <div className="text-red-500 text-sm mb-4">
+                There was an error submitting your application. Please try again.
+              </div>
+            )}
+
+            <Button type="submit" size="lg" className="w-full md:w-auto" disabled={state.submitting}>
+              {state.submitting ? "Submitting..." : "Apply"}
             </Button>
           </form>
         </Form>
