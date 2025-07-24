@@ -19,7 +19,7 @@ export default function ConnectPage() {
           </p>
 
           <Suspense fallback={<Loader />}>
-            <ContactForm />
+            <ContactForm isConnectPage={true} />
           </Suspense>
         </div>
       </section>

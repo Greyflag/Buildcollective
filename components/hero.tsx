@@ -99,23 +99,49 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto"
+            className="text-xl md:text-2xl mb-6 text-gray-300 max-w-2xl mx-auto"
           >
 Building to learn, grow, and create together
+          </motion.p>
+
+          {/* Subtle light divider */}
+          <motion.div
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{ opacity: 1, scaleX: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="w-24 h-px mx-auto mb-6 relative"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/50 to-transparent blur-sm" />
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
+            className="text-base md:text-lg mb-8 text-gray-400 max-w-2xl mx-auto"
+          >
+            Do you have an idea, but lack all the skills and network to execute?
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex justify-center"
           >
-            <Button size="lg" className="group magnetic-button">
-              View Our Work
+            <Button 
+              size="lg" 
+              className="group magnetic-button"
+              onClick={() => {
+                const contactSection = document.querySelector('#contact-section')
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
+            >
+              Join Our Society
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button size="lg" variant="outline" className="magnetic-button">
-              Connect With Us
             </Button>
           </motion.div>
         </motion.div>
